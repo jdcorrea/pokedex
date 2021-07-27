@@ -72,6 +72,12 @@ $base-color-white: #FFFFFF;
     width: 50px;
     background-color: $base-color-white;
     border-radius: 50%;
+    transition: transform .2s;
+
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.1);
+    }
   }
 
   .paging__icon {

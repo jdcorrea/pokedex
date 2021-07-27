@@ -13,9 +13,21 @@ const Pokedex = () => {
   const [nextPage, setNextPage] = useState(null);
   const [pokemon, setPokemon] = useState([]);
   const limit = 9;
+  const [endpoint, setEndpoint] = useState(`${POKEAPI_URL}pokemon?limit=${limit}&offset=${initialPokemon}/`);
+
+  const handlePreviousPage = () => {
+    setEndpoint(previousPage);
+  }
+
+  const handleNextPage = () => {
+    setEndpoint(nextPage);
+  }
 
   useEffect(() => {
-    const endpoint = `${POKEAPI_URL}pokemon?limit=${limit}&offset=${initialPokemon}/`;
+    console.log("@endP: ", endpoint);
+    console.log("@endNext: ", nextPage);
+    console.log("@endPrevious: ", previousPage);
+    setEndpoint(endpoint);
     fetch(endpoint)
       .then(res => res.json())
       .then(data => {
@@ -23,7 +35,7 @@ const Pokedex = () => {
         setNextPage((data && data.next) || null);
         setPokemon((data && data.results) || []);
       })
-  }, [previousPage, nextPage]);
+  }, [endpoint, previousPage, nextPage]);
 
   return (
     <Fragment>
@@ -46,10 +58,20 @@ const Pokedex = () => {
       </section>
       <section className="paging">
         <div className="paging__previous">
-          <img className="paging__icon" src={previousArrow} alt="previous arrow" />
+          <img 
+            className="paging__icon" 
+            src={previousArrow} 
+            alt="previous arrow" 
+            onClick={handlePreviousPage}
+          />
         </div>
         <div className="paging__next">
-          <img className="paging__icon" src={nextArrow} alt="previous arrow" />
+          <img 
+            className="paging__icon" 
+            src={nextArrow} 
+            alt="previous arrow" 
+            onClick={handleNextPage}
+          />
         </div>        
       </section>
     </Fragment>
