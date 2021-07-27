@@ -1,11 +1,11 @@
 import React from "react";
+import Pokepage from "../../pages/Pokedex";
 import './App.css';
 
 const App = () => {
   return (
     <div className="App">
-      <h1>Main App</h1>
-      
+      <Pokepage/>
     </div>
   );
 }

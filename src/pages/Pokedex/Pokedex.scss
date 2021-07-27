@@ -1,0 +1,81 @@
+// variables
+$base-color-red: #D20606;
+$base-color-white: #FFFFFF;
+
+.pokedex {
+  display: grid;
+  grid-template-areas: 
+    "pokemon-0 pokemon-1 pokemon-2"
+    "pokemon-3 pokemon-4 pokemon-5"
+    "pokemon-6 pokemon-7 pokemon-8";
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  width: 100%;
+  height: 90%;
+
+  &__pokemon {
+    width: 100%;
+    height: 100%;
+  }
+  &__pokemon-0 {
+    grid-area: pokemon-0;
+  }
+  
+  &__pokemon-1 {
+    grid-area: pokemon-1;
+  }
+  
+  &__pokemon-2 {
+    grid-area: pokemon-2;
+  }
+  
+  &__pokemon-3 {
+    grid-area: pokemon-3;
+  }
+  
+  &__pokemon-4 {
+    grid-area: pokemon-4;
+  }
+  
+  &__pokemon-5 {
+    grid-area: pokemon-5;
+  }
+  
+  &__pokemon-6 {
+    grid-area: pokemon-6;
+  }
+  
+  &__pokemon-7 {
+    grid-area: pokemon-7;
+  }
+  
+  &__pokemon-8 {
+    grid-area: pokemon-8;
+  }
+}
+
+.paging {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: 10%;
+  min-height: 70px;
+  background-color: $base-color-red;
+
+  &__next,
+  &__previous {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 50px;
+    background-color: $base-color-white;
+    border-radius: 50%;
+  }
+
+  .paging__icon {
+    width: 80%;
+    height: 80%;
+  }
+}
