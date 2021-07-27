@@ -1,12 +1,18 @@
 import React from "react";
+import BackGroundImg from "../BackGroundImg";
 import Pokepage from "../../pages/Pokedex";
 import './App.css';
 
 const App = () => {
   return (
-    <div className="App">
-      <Pokepage/>
-    </div>
+    <section className="main-section section" role="main">
+      {/* <div className="section__background">
+        <BackGroundImg />
+      </div> */}
+      <div className="section-pokedex">
+        <Pokepage />
+      </div>
+    </section>
   );
 }
 
