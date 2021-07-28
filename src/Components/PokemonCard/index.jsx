@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import TypeContainer from "../TypeContainer";
 import PokemonNotFound from "../../images/404_pokemon.png";
 import './PokemonCard.scss';
 
@@ -6,7 +7,7 @@ const PokemonCard = ({ name, url, classToUse }) => {
   const endpoint = `${url}`;
   const [pokemonImageUrl, setPokemonImageUrl] = useState('');
   const [pokemonNumber, setPokemonNumber] = useState('');
-  const [pokemonTypes, setPokemonTypes] = useState([])
+  const [pokemonTypes, setPokemonTypes] = useState([]);
 
   useEffect(() => {
     fetch(endpoint)
@@ -36,7 +37,10 @@ const PokemonCard = ({ name, url, classToUse }) => {
         <ul className="details__type-list list">
           {
             pokemonTypes.map((typeElement, id) => {
-              return <li className="list__item" key={id}>{typeElement.type.name}</li>
+              const propsToSend = {
+                typeName: typeElement.type.name
+              }
+              return <TypeContainer {...propsToSend} key={id}/>
             })
           }
         </ul>
