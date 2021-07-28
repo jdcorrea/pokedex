@@ -1,18 +1,20 @@
 import React from "react";
-import BackGroundImg from "../BackGroundImg";
-import Pokepage from "../../pages/Pokedex";
+import { Route, Switch } from "react-router-dom";
+// import BackGroundImg from "../BackGroundImg";
+import Pokedex from "../../pages/Pokedex";
+import Pokemon from "../../pages/Pokemon";
 import './App.css';
 
 const App = () => {
   return (
-    <section className="main-section section" role="main">
-      {/* <div className="section__background">
-        <BackGroundImg />
-      </div> */}
-      <div className="section-pokedex">
-        <Pokepage />
-      </div>
-    </section>
+    <Switch>
+      <Route exact path="/" component={Pokedex} />
+      <Route path="/pokemon/:id" 
+        render={(props) => (
+          <Pokemon {...props} />
+        )}
+      />
+    </Switch>
   );
 }
 

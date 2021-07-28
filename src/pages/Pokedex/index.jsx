@@ -1,8 +1,10 @@
 import React, { useState, useEffect, Fragment } from 'react'
+import PokemonDetails from "../Pokemon";
 import PokemonCard from '../../Components/PokemonCard';
 import nextArrow from "../../images/next_arrow.png";
 import previousArrow from "../../images/previous_arrow.png";
 import './Pokedex.scss';
+import { useHistory } from 'react-router-dom';
 
 const POKEAPI_URL = 'https://pokeapi.co/api/v2/';
 
@@ -14,12 +16,19 @@ const Pokedex = () => {
   const limit = 12;
   const [endpoint, setEndpoint] = useState(`${POKEAPI_URL}pokemon?limit=${limit}&offset=${initialPokemon}/`);
 
+  const history = useHistory();
+
   const handlePreviousPage = () => {
     setEndpoint(previousPage);
   }
 
   const handleNextPage = () => {
     setEndpoint(nextPage);
+  }
+
+  const onClick = (pokemonNumber) => {
+    history.push(`/pokemon/${pokemonNumber}`);
+    console.log(pokemonNumber);
   }
 
   useEffect(() => {
@@ -34,7 +43,7 @@ const Pokedex = () => {
   }, [endpoint, previousPage, nextPage]);
 
   return (
-    <Fragment>
+    <div className="section-pokedex">
       <section className="paging">
         <div className="paging__previous">
           <img
@@ -58,18 +67,19 @@ const Pokedex = () => {
           pokemon && pokemon.map((p, index) => {
             const propsToSend = {
               name: p.name,
-              url: p.url
+              url: p.url,
+              onClick: onClick
             }
 
             return (
               <div key={index} className="pokedex__pokemon">
-                <PokemonCard {...propsToSend} />
+                <PokemonCard {...propsToSend}/>
               </div>
             );
           })
         }
       </section>
-    </Fragment>
+    </div>
   );
 }
 

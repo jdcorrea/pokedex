@@ -3,7 +3,7 @@ import TypeContainer from "../TypeContainer";
 import PokemonNotFound from "../../images/404_pokemon.png";
 import './PokemonCard.scss';
 
-const PokemonCard = ({ name, url, classToUse }) => {
+const PokemonCard = ({ name, url, onClick}) => {
   const endpoint = `${url}`;
   const [pokemonImageUrl, setPokemonImageUrl] = useState('');
   const [pokemonNumber, setPokemonNumber] = useState('');
@@ -25,7 +25,9 @@ const PokemonCard = ({ name, url, classToUse }) => {
         <img
           className="img"
           src={pokemonImageUrl}
-          alt={`pokemon ${name}`} />
+          alt={`pokemon ${name}`}
+          onClick={() => onClick(pokemonNumber)}
+        />
       </figcaption>
       <div className="pokemon-card__details details">
         <p className="details__number">
