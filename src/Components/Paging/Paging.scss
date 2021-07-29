@@ -1,0 +1,38 @@
+// variables
+$base-color-red: #d20606;
+$base-color-white: #ffffff;
+
+.paging {
+  position: fixed;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: 40px;
+  top: 0;
+  left: 0;
+  background-color: $base-color-red;
+  z-index: 1;
+
+  &__next,
+  &__previous {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    width: 30px;
+    background-color: $base-color-white;
+    border-radius: 50%;
+    transition: transform 0.2s;
+
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.1);
+    }
+  }
+}
+
+.paging__icon {
+  width: 80%;
+  height: 80%;
+}
