@@ -23,10 +23,6 @@ const Pokemon = (props) => {
   const [image, setImage] = useState(PokemonNotFound);
   const [abilities, setAbilities] = useState([]);
 
-  const refreshComponent = () => {
-
-  }
-
   const goToNextPokemon = () => {
     if (idNumber < POKEMON_TOTAL) {
       setPokemonId(pokemonId + 1);
@@ -41,9 +37,7 @@ const Pokemon = (props) => {
 
   useEffect(() => {
     setEndpoint(`${POKEAPI_URL}${pokemonId}`);
-    console.log("id, pokeid", idNumber, pokemonId);
     if (idNumber === pokemonId) {
-      console.log("<<<Renderizo>>>!", endpoint);
       fetch(endpoint)
         .then(res => res.json())
         .then(data => {
@@ -54,9 +48,7 @@ const Pokemon = (props) => {
           setAbilities((data && data.abilities) || []);
         });
     } else {
-      console.log("<<<Redirecting>>>! PokemonId", pokemonId);
       history.push(`/pokemon/${pokemonId}`)
-
     }
   }, [idNumber, endpoint, pokemonId, history]);
 
