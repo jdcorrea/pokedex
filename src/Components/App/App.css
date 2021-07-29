@@ -1,8 +1,18 @@
+@font-face {
+  font-family: "pokemon_font";
+  src: url("../../../src/fonts/x360.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "pokemon_font";
+  font-size: 10px;
 }
+
 
 /* .main-section {
   position: relative;

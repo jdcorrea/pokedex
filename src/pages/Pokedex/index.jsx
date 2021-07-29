@@ -28,15 +28,19 @@ const Pokedex = () => {
     history.push(`/pokemon/${pokemonNumber}`);
   }
 
-  useEffect(() => {
-    setEndpoint(endpoint);
-    fetch(endpoint)
+  async function loadEndpoint() {
+    await fetch(endpoint)
       .then(res => res.json())
       .then(data => {
         setPreviousPage((data && data.previous) || null);
         setNextPage((data && data.next) || null);
         setPokemon((data && data.results) || []);
-      })
+      });
+  }
+
+  useEffect(() => {
+    setEndpoint(endpoint);
+    loadEndpoint();
   }, [endpoint, previousPage, nextPage]);
 
   return (

@@ -37,25 +37,22 @@ $black: #000;
     width: 100%;
     height: 50px;
     padding: 5px;
-
+    
     &__number {
+      font-size: 2rem;
       color: $base-color-darkgray;
     }
 
     &__name {
+      font-size: 2rem;
       color: $black;
       text-transform: capitalize;
     }
-
+    
     &__type-list {
       display: flex;
       justify-content: space-evenly;
       width: 100%;
-      
-      .list__item {
-        text-transform: capitalize;
-        list-style: none;
-      }
     }
   }
 }

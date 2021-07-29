@@ -22,6 +22,11 @@ $base-color-white: #ffffff;
     height: 40px;
     border-radius: 50%;
     padding: 5px;
+
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.3);
+    }
   }
 
   &__next,
