@@ -1,6 +1,7 @@
 import React, { useState, useEffect, Fragment } from 'react';
 import { useHistory, withRouter } from 'react-router-dom';
 import TypeContainer from "../../Components/TypeContainer";
+import StatsList from "../../Components/StatsList";
 import Paging from "../../Components/Paging";
 import PokemonNotFound from "../../images/404_pokemon.png";
 import './Pokemon.scss';
@@ -71,7 +72,7 @@ const Pokemon = (props) => {
         </section>
         <section className="pokemon-container__basic-info">
           <h3 className="basic-info__title">
-            basic information
+            basic information:
           </h3>
           <table className="basic-info__table table">
             <tbody>
@@ -87,7 +88,7 @@ const Pokemon = (props) => {
           </table>
         </section>
         <section className="pokemon-container__abilities">
-          <h2>abilities</h2>
+          <h2>abilities:</h2>
           <ul className="abilities-list">
             {
               abilities.map((abilityElement, id) => {
@@ -101,35 +102,40 @@ const Pokemon = (props) => {
         </section>
         <section className="pokemon-container__types">
           <h2>type:</h2>
-          {
-            types.map((typeElement, id) => {
-              const propsToSend = {
-                typeName: typeElement.type.name
-              }
-              return <TypeContainer {...propsToSend} key={id} />
-            })
-          }
+          <ul className="list">
+            {
+              types.map((typeElement, id) => {
+                const propsToSend = {
+                  typeName: typeElement.type.name
+                }
+                return <TypeContainer {...propsToSend} key={id} />
+              })
+            }
+          </ul>
         </section>
-        <section className="pokemon-container__stats">
+        <section className="pokemon-container__stats stats">
           <h3 className="stats__title">
             stats
           </h3>
-          <table className="stats__table table">
-            <tbody>
-              {
-                stats.map((statElement, id) => {
-                  return (
-                    <Fragment key={id}>
-                      <tr>
-                        <td className="table__header">{statElement.stat.name}</td>
-                        <td className="table__detail">{statElement.base_stat}</td>
-                      </tr>
-                    </Fragment>
-                  )
-                })
-              }
-            </tbody>
-          </table>
+          <div className="stats__details">
+            {
+              stats.map((statElement, id) => {
+                return (
+                  <div className="stats__list" key={id}>
+                    <span className="stats-header">
+                      {statElement.stat.name}
+                    </span>
+                    <ul className="stats-list">
+                      <StatsList
+                        baseStat={statElement.base_stat}
+                        
+                      />
+                    </ul>
+                  </div>
+                )
+              })
+            }
+          </div>
         </section>
       </section >
     </Fragment >

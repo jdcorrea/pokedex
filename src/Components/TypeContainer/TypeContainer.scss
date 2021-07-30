@@ -2,8 +2,10 @@ $black: #000;
 $white: #fff;
 
 .list__item {
-  text-align: center;
-  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
   height: 100%;
   border-radius: 5px;
   font-size: 1.4rem;
