@@ -58,7 +58,7 @@ const Pokemon = (props) => {
   }, [idNumber, endpoint, pokemonId]);
 
   return (
-    <Fragment>
+    <section aria-label="pokemon details">
       <Paging onClickNext={goToNextPokemon} onClickPrevious={goToPreviousPokemon}></Paging>
       <section className="pokemon-container">
         <h1 className="pokemon-container__title title">
@@ -128,7 +128,7 @@ const Pokemon = (props) => {
                     <ul className="stats-list">
                       <StatsList
                         baseStat={statElement.base_stat}
-                        
+
                       />
                     </ul>
                   </div>
@@ -138,7 +138,7 @@ const Pokemon = (props) => {
           </div>
         </section>
       </section >
-    </Fragment >
+    </section >
   );
 }
 

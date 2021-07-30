@@ -44,7 +44,7 @@ const Pokedex = () => {
   }, [endpoint, previousPage, nextPage]);
 
   return (
-    <div className="section-pokedex">
+    <div className="section-pokedex" aria-label="pokedex container">
       <Paging onClickNext={goToNextPage} onClickPrevious={goToPreviousPage} />
 
       <section className="pokedex">

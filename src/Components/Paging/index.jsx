@@ -13,10 +13,10 @@ const Paging = ({ onClickNext, onClickPrevious }) => {
   }
 
   return (
-    <section className="paging">
+    <section className="paging" aria-label="paging controls">
       <img
         className="paging__icon"
-        src={pokeball} 
+        src={pokeball}
         alt="go back to pokedex"
         onClick={goToPokedex}
       />
@@ -25,15 +25,15 @@ const Paging = ({ onClickNext, onClickPrevious }) => {
           className="icon"
           src={previousArrow}
           alt="previous arrow"
-          onClick={() => onClickPrevious()}
+          onClick={onClickPrevious}
         />
       </div>
       <div className="paging__next">
         <img
           className="icon"
           src={nextArrow}
-          alt="previous arrow"
-          onClick={() => onClickNext()}
+          alt="next arrow"
+          onClick={onClickNext}
         />
       </div>
     </section>
