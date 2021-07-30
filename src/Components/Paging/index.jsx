@@ -14,27 +14,35 @@ const Paging = ({ onClickNext, onClickPrevious }) => {
 
   return (
     <section className="paging" aria-label="paging controls">
-      <img
-        className="paging__icon"
-        src={pokeball}
-        alt="go back to pokedex"
-        onClick={goToPokedex}
-      />
-      <div className="paging__previous">
+      <div className="paging__home" aria-label="back to pokedex">
         <img
           className="icon"
-          src={previousArrow}
-          alt="previous arrow"
-          onClick={onClickPrevious}
+          src={pokeball}
+          alt="go back to pokedex"
+          onClick={goToPokedex}
         />
+        <p className="paging__info">
+        </p>
+      </div>
+      <div className="paging__previous">
+        <div className="previous-container">
+          <img
+            className="icon"
+            src={previousArrow}
+            alt="previous arrow"
+            onClick={onClickPrevious}
+          />
+        </div>
       </div>
       <div className="paging__next">
-        <img
-          className="icon"
-          src={nextArrow}
-          alt="next arrow"
-          onClick={onClickNext}
-        />
+        <div className="next-container">
+          <img
+            className="icon"
+            src={nextArrow}
+            alt="next arrow"
+            onClick={onClickNext}
+          />
+        </div>
       </div>
     </section>
   )
