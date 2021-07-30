@@ -5,3 +5,9 @@ export const onClickNextObject = {
 export const onClickPreviousObject = {
   onClickPrevious: (previous) => previous
 }
+
+export const mockHistory = {
+  push: function (path) {
+    return path;
+  }
+}

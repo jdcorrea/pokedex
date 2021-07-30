@@ -2,13 +2,7 @@ import React from "react";
 import ReactRouterDom from "react-router-dom";
 import { mount } from 'enzyme';
 import Paging from "../index";
-import { onClickNextObject, onClickPreviousObject } from "../__mocks__/Paging.mock";
-
-const mockHistory = {
-  push: function (path) {
-    return path;
-  }
-}
+import { onClickNextObject, onClickPreviousObject, mockHistory } from "../__mocks__/Paging.mock";
 
 jest.mock('react-router-dom', () => ({
   ...jest.requireActual('react-router-dom'),
