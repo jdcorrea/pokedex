@@ -19,7 +19,7 @@ describe('<Paging /> Component', () => {
     const wrapper = mount(
       <Paging onClickNext={onClickNextObject.onClickNext} onClickPrevious={onClickPreviousObject.onClickPrevious} />
     );
-    const nextButton = wrapper.find('[alt="next arrow"]');
+    const nextButton = wrapper.find('[rol="next arrow"]');
     expect(wrapper.find('[aria-label="paging controls"]').exists()).toEqual(true);
     expect(nextButton.exists()).toEqual(true);
     nextButton.simulate('click');
@@ -31,8 +31,8 @@ describe('<Paging /> Component', () => {
     const wrapper = mount(
       <Paging onClickNext={onClickNextObject.onClickNext} onClickPrevious={onClickPreviousObject.onClickPrevious} />
     );
-    const previousButton = wrapper.find('[alt="previous arrow"]');
-    expect(wrapper.find('[aria-label="paging controls"]').exists()).toEqual(true);
+    const previousButton = wrapper.find('[rol="previous"]');
+    // expect(wrapper.find('[aria-label="paging controls"]').exists()).toEqual(true);
     expect(previousButton.exists()).toEqual(true);
     previousButton.simulate('click');
     expect(spyPrevious).toHaveBeenCalled();
@@ -43,7 +43,7 @@ describe('<Paging /> Component', () => {
     const wrapper = mount(
       <Paging onClickNext={onClickNextObject.onClickNext} onClickPrevious={onClickPreviousObject.onClickPrevious} />
     );
-    const goHomeButton = wrapper.find('[alt="go back to pokedex"]');
+    const goHomeButton = wrapper.find('[rol="home"]');
     expect(wrapper.find('[aria-label="paging controls"]').exists()).toEqual(true);
     expect(goHomeButton.exists()).toEqual(true);
     goHomeButton.simulate('click');
