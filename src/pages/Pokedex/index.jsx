@@ -44,9 +44,11 @@ const Pokedex = () => {
   }, [endpoint, previousPage, nextPage]);
 
   return (
-    <div className="section-pokedex" aria-label="pokedex container">
+    <div className="section-pokedex" aria-label="pokedex container" role="main">
       <Paging onClickNext={goToNextPage} onClickPrevious={goToPreviousPage} />
-
+      <section className="section-pokedex__title">
+        <h1>pokedex</h1>
+      </section>
       <section className="pokedex">
         {
           pokemon && pokemon.map((p, index) => {

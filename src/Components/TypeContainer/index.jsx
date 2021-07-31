@@ -3,7 +3,9 @@ import './TypeContainer.scss';
 
 const TypeContainer = ({typeName}) => {
   return (
-    <li className={`list__item ${typeName}`}>{typeName}</li>
+    <li className={`list__item ${typeName}`}>
+      <p className="describe-item">{typeName}</p>
+    </li>
   )
 }
 
