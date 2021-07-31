@@ -58,7 +58,7 @@ const Pokemon = (props) => {
   }, [idNumber, endpoint, pokemonId]);
 
   return (
-    <section aria-label="pokemon details">
+    <section aria-label="pokemon details" role="main">
       <Paging onClickNext={goToNextPokemon} onClickPrevious={goToPreviousPokemon}></Paging>
       <section className="pokemon-container">
         <h1 className="pokemon-container__title title">
@@ -71,9 +71,9 @@ const Pokemon = (props) => {
           </figure>
         </section>
         <section className="pokemon-container__basic-info">
-          <h3 className="basic-info__title">
+          <h2 className="basic-info__title">
             basic information:
-          </h3>
+          </h2>
           <table className="basic-info__table table">
             <tbody>
               <tr>
