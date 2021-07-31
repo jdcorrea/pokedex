@@ -14,7 +14,7 @@ $white: #fff;
 
 .describe-item {
   background-color: white;
-  font-size: 1.5rem;
+  font-size: 1rem;
   color: #000;
   padding: 2px;
   border-radius: 5px;
@@ -92,4 +92,16 @@ $white: #fff;
 .water {
   background: linear-gradient(to bottom, #616161 50%, #616161 50%);
   color: $white;
+}
+
+@media (min-width: 280px) {
+  .describe-item {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .describe-item {
+    font-size: 1.5rem;
+  }
 }

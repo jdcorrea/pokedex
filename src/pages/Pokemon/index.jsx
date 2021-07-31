@@ -70,49 +70,57 @@ const Pokemon = (props) => {
             <img src={image} alt={basicInfo.name} />
           </figure>
         </section>
-        <section className="pokemon-container__basic-info">
-          <h2 className="basic-info__title">
-            basic information:
-          </h2>
-          <table className="basic-info__table table">
-            <tbody>
-              <tr>
-                <td className="table__header">height: </td>
-                <td className="table__detail">{parseFloat(basicInfo.height * 10)} cms</td>
-              </tr>
-              <tr>
-                <td className="table__header">weight: </td>
-                <td className="table__detail">{Math.round(parseFloat(basicInfo.weight * 2.21)) / 10} pounds</td>
-              </tr>
-            </tbody>
-          </table>
-        </section>
-        <section className="pokemon-container__abilities">
-          <h2>abilities:</h2>
-          <ul className="abilities-list">
-            {
-              abilities.map((abilityElement, id) => {
-                if (!abilityElement.is_hidden) {
-                  return <li key={id} className="abilities-list__item">{abilityElement.ability.name}</li>
-                }
-                return '';
-              })
-            }
-          </ul>
-        </section>
-        <section className="pokemon-container__types">
-          <h2>type:</h2>
-          <ul className="list">
-            {
-              types.map((typeElement, id) => {
-                const propsToSend = {
-                  typeName: typeElement.type.name
-                }
-                return <TypeContainer {...propsToSend} key={id} />
-              })
-            }
-          </ul>
-        </section>
+        <div className="pokemon-container__aside aside">
+          <section className="aside__container basic-info">
+            <div className="basic-info__title">
+              <h2>
+                basic information:
+              </h2>
+            </div>
+            <table className="basic-info__table table">
+              <tbody>
+                <tr>
+                  <td className="table__detail">
+                    <span className="td-title">height:</span>
+                    <span className="td-detail">{parseFloat(basicInfo.height * 10)} cms</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td className="table__detail">
+                    <span className="td-title">weight:</span>
+                    <span className="td-detail">{Math.round(parseFloat(basicInfo.weight * 2.21)) / 10} pounds</span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+          <section className="aside__abilities">
+            <h2>abilities:</h2>
+            <ul className="abilities-list">
+              {
+                abilities.map((abilityElement, id) => {
+                  if (!abilityElement.is_hidden) {
+                    return <li key={id} className="abilities-list__item">{abilityElement.ability.name}</li>
+                  }
+                  return '';
+                })
+              }
+            </ul>
+          </section>
+          <section className="aside__types">
+            <h2>type:</h2>
+            <ul className="list">
+              {
+                types.map((typeElement, id) => {
+                  const propsToSend = {
+                    typeName: typeElement.type.name
+                  }
+                  return <TypeContainer {...propsToSend} key={id} />
+                })
+              }
+            </ul>
+          </section>
+        </div>
         <section className="pokemon-container__stats stats">
           <h3 className="stats__title">
             stats
