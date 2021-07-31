@@ -21,8 +21,6 @@ const Paging = ({ onClickNext, onClickPrevious }) => {
           alt="go back to pokedex"
           onClick={goToPokedex}
         />
-        <p className="paging__info">
-        </p>
       </div>
       <div className="paging__previous" rol="previous">
         <div className="previous-container">

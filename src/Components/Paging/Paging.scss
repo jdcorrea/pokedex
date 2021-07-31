@@ -42,7 +42,7 @@ $base-color-white: #ffffff;
         background-color: rgba(0, 0, 0, 0.8);
         color: white;
         border-radius: 10px;
-        font-size: 1.2rem;
+        font-size: 1.1rem;
         padding: 3px;
       }
     }
@@ -82,15 +82,16 @@ $base-color-white: #ffffff;
       align-items: center;
     }
 
-    &:hover {
-      cursor: pointer;
-      transform: scale(1.3);
-    }
     .icon {
       background-color: $base-color-white;
       border-radius: 50%;
       width: 30px;
       height: 30px;
+      
+      &:hover {
+        cursor: pointer;
+        transform: scale(1.3);
+      }
     }
   }
   &__next {
