@@ -9,14 +9,18 @@ const PokemonCard = ({ name, url, onClick}) => {
   const [pokemonNumber, setPokemonNumber] = useState('');
   const [pokemonTypes, setPokemonTypes] = useState([]);
 
-  useEffect(() => {
-    fetch(endpoint)
+  async function loadEndpoint() {
+    await fetch(endpoint)
       .then(res => res.json())
       .then(data => {
         setPokemonImageUrl((data && data.sprites.front_default) || PokemonNotFound);
         setPokemonNumber((data && data.id) || 9999);
         setPokemonTypes((data && data.types) || []);
-      })
+      });
+  }
+
+  useEffect(() => {
+    loadEndpoint();
   }, [endpoint, pokemonImageUrl, pokemonNumber]);
 
   return (
