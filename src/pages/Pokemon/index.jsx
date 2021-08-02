@@ -1,5 +1,5 @@
 import React, { useState, useEffect, Fragment } from 'react';
-import { useHistory, withRouter } from 'react-router-dom';
+import { useHistory} from 'react-router-dom';
 import TypeContainer from "../../Components/TypeContainer";
 import StatsList from "../../Components/StatsList";
 import Paging from "../../Components/Paging";
@@ -150,4 +150,4 @@ const Pokemon = (props) => {
   );
 }
 
-export default withRouter(Pokemon);
+export default Pokemon;

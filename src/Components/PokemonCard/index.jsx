@@ -20,7 +20,7 @@ const PokemonCard = ({ name, url, onClick}) => {
   }, [endpoint, pokemonImageUrl, pokemonNumber]);
 
   return (
-    <article className="pokemon-card">
+    <article className="pokemon-card" aria-label="pokemon card">
       <figcaption className="pokemon-card__img">
         <img
           className="img"

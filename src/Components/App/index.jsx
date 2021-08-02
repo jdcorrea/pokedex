@@ -10,12 +10,8 @@ const App = () => {
     <BrowserRouter>
       <Switch>
         <Route exact path="/" component={Pokedex} />
-        <Route path="/pokemon/:id"
-          render={(props) => (
-            <Pokemon {...props} />
-          )}
-        />
-        <Route component={NotFound} />
+        <Route path="/pokemon/:id" component={Pokemon}/>
+        <Route component={NotFound}/>
       </Switch>
     </BrowserRouter>
   );

@@ -4,7 +4,8 @@ import './NotFound.scss';
 
 const NotFound = () => {
   return (
-    <section className="notfound-container">
+    <section className="notfound-container" aria-label="page not found" role="main">
+      <h1>we are sorry!!!</h1>
       <img 
         src={NotFoundImage} 
         alt="page doesn't exist." 
