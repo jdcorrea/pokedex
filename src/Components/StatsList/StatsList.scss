@@ -1,0 +1,10 @@
+.stats-list__item {
+  width: 100%;
+  height: calc(100% / 15);
+  background-color: rgb(207, 207, 207);
+  margin: 3px;
+}
+
+.stats-list__item--active {
+  background-color: rgb(35, 35, 255);
+}
