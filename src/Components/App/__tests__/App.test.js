@@ -8,9 +8,6 @@ import Pokemon from "../../../pages/Pokemon";
 import Pokedex from "../../../pages/Pokedex";
 import {rrd} from "../__mocks__/react-router-dom";
 
-// afterEach(() => {
-//   jest.clearAllMocks();
-// });
 afterEach(cleanup);
 
 jest.mock(rrd);
